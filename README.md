@@ -293,7 +293,7 @@ If you know a paper that truly does **embodied navigation + category discovery**
 ```bibtex
 @misc{awesome-embodied-category-discovery,
   title = {Awesome Embodied Category Discovery},
-  author = {Your Name},
+  author = {Shivanand Kundargi},
   year = {2025},
   url = {https://github.com/yourusername/Awesome-Embodied-Category-Discovery}
 }
