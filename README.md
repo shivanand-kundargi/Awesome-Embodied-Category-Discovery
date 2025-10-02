@@ -249,7 +249,7 @@ Works purely on static datasets, or only on unknown-detection without discoverin
 Here are environment datasets and simulation platforms frequently used for embodied AI / navigation research.
 
 - **Habitat-Matterport 3D (HM3D)** — high-fidelity indoor scans for embodied agents  
-  - 📄 [HM3D paper (arXiv)](https://arxiv.org/abs/2109.08238)  [oai_citation:2‡arXiv](https://arxiv.org/abs/2109.08238?utm_source=chatgpt.com)  
+  - 📄 [HM3D paper (arXiv)](https://arxiv.org/abs/2109.08238)   
   - 🏷️ [GitHub / dataset repo](https://github.com/facebookresearch/habitat-matterport3d-dataset)   
 
 - **HM3D-Semantics (HM3D-Sem)** — semantic annotations over HM3D scenes  
