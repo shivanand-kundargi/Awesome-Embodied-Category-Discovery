@@ -183,10 +183,9 @@ Thanks to all contributors and researchers in the embodied AI community for thei
 
 **Note**: This is a living document. Papers are continuously added as new research emerges. Feel free to suggest papers or improvements! -->
 
-
 # Awesome Embodied Category Discovery [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of research where **robots or embodied agents navigate / explore environments** and simultaneously **discover new object categories / concepts** through unsupervised or self-supervised means.
+A curated list of research and resources on **Embodied Category / Concept Discovery**, where agents or robots **navigate / explore environments** and **discover new object categories / semantics**.
 
 ---
 
@@ -205,12 +204,12 @@ A curated list of research where **robots or embodied agents navigate / explore 
 
 ## Overview
 
-This list only includes papers that meet both criteria:
+We include **only** papers that combine:
 
-1. The method involves an **embodied agent / robot** that moves or observes over space/time.  
-2. The method performs **novel category / object discovery** (clustering, modeling new object classes, etc.)
+1. **Embodied exploration / navigation** (the agent is moving/observing through an environment), and  
+2. **Category / object / concept discovery** (i.e. clustering or discovering new semantic classes), not just detecting unknowns.
 
-We do *not* include static-dataset novel class discovery works or methods that merely detect “unknowns” without building new categories.
+Works purely on static datasets, or only on unknown-detection without discovering categories, are excluded.
 
 ---
 
@@ -219,60 +218,73 @@ We do *not* include static-dataset novel class discovery works or methods that m
 ### 2020s
 
 - **SCIM: Simultaneous Clustering, Inference, and Mapping for Open-World Semantic Scene Understanding**  
-  *H. Blum, M. G. Müller, A. Gawel, R. Siegwart, C. Cadena*  
-  - 📄 [Paper](https://arxiv.org/abs/2206.10670)  [oai_citation:0‡arXiv](https://arxiv.org/abs/2206.10670?utm_source=chatgpt.com)  
+  *Hermann Blum, Marcus G. Müller, Abel Gawel, Roland Siegwart, Cesar Cadena*  
+  - 📄 [Paper (arXiv)](https://arxiv.org/abs/2206.10670)  
   - 💻 [Code](https://github.com/hermannsblum/scim)  
-  > Robot explores unknown indoor environments, clusters novel semantic classes during mapping, and uses these clusters to self-supervise improvement of semantic segmentation.
+  > The robot explores unknown indoor environments, clusters novel semantic classes online while building a map, and uses these clusters to self-supervise semantic segmentation.    
+
+- **SCOD: Active Object Detection for Embodied Agents using Sensory Commutativity of Action Sequences**  
+  *Hugo Caselles-Dupré, Michael Garcia-Ortiz, David Filliat* (2021)  
+  - 📄 [Paper (arXiv)](https://arxiv.org/abs/2107.02069)  
+  > Uses the commutativity of action sequences to help an embodied agent actively discover objects.   
 
 ---
 
 ### Earlier Works
 
 - **Unsupervised Discovery of Object Classes with a Mobile Robot**  
-  *J. Mason, B. Marthi, R. Parr*  
-  - 📄 [Paper](https://users.cs.duke.edu/~parr/icra14_mmp.pdf)  [oai_citation:1‡Duke University Computer Science](https://users.cs.duke.edu/~parr/icra14_mmp.pdf?utm_source=chatgpt.com)  
-  > A mobile robot system that discovers object candidates and clusters them into novel object classes during exploration.
-
-- **Unsupervised Discovery of Object Classes from Range Data using Latent Dirichlet Allocation**  
-  *F. Endres, C. Plagemann, C. Stachniss, W. Burgard*  
-  - 📄 [Paper](https://www.roboticsproceedings.org/rss05/p15.pdf)  [oai_citation:2‡roboticsproceedings.org](https://www.roboticsproceedings.org/rss05/p15.pdf?utm_source=chatgpt.com)  
-  > Robot uses 3D range (laser) data and LDA to cluster objects into classes without prior knowledge, discovering new object categories from sensor observations.
+  *Julian Mason, Bhaskara Marthi, Ronald Parr* (ICRA 2014)  
+  - 📄 [Paper](https://users.cs.duke.edu/~parr/icra14_mmp.pdf)  
+  > A mobile robot collects sensory data and clusters object proposals into classes during exploration.
 
 - **Simultaneous Localization, Mapping, and Manipulation for Unsupervised Object Discovery**  
   *Lu Ma, Mahsa Ghafarianzadeh, Dave Coleman, Nikolaus Correll, Gabe Sibley*  
-  - 📄 [Paper](https://arxiv.org/abs/1411.0802)  
-  > Combines SLAM and object discovery: the robot builds maps while identifying new object candidates and refining their models over time via appearance and manipulation cues.
+  - 📄 [Paper (arXiv)](https://arxiv.org/abs/1411.0802)  
+  > Combines SLAM and unsupervised object discovery; uses appearance / motion / manipulation cues to refine discovered object models.
 
 ---
 
 ## Datasets & Simulators
 
-These are useful platforms for running experiments in embodied navigation and perception:
+Here are environment datasets and simulation platforms frequently used for embodied AI / navigation research.
 
-- **Habitat-Matterport 3D (HM3D / HM3D-Semantics)** — real indoor scans for navigation + semantic labeling  
-- **Replica / ReplicaCAD** — scanned indoor scenes with class / instance labels  
-- **iGibson / Gibson** — simulated indoor environments with navigation + object interaction  
-- **AI2-THOR / ProcTHOR** — interactive household environments supporting movement + manipulation  
-- **JRDB** — egocentric robot video dataset (robot motion + perception)  
-- **NovelCraft** — simulation environment designed for novelty detection / category discovery with an active agent  
+- **Habitat-Matterport 3D (HM3D)** — high-fidelity indoor scans for embodied agents  
+  - 📄 [HM3D paper (arXiv)](https://arxiv.org/abs/2109.08238)  [oai_citation:2‡arXiv](https://arxiv.org/abs/2109.08238?utm_source=chatgpt.com)  
+  - 🏷️ [GitHub / dataset repo](https://github.com/facebookresearch/habitat-matterport3d-dataset)   
+
+- **HM3D-Semantics (HM3D-Sem)** — semantic annotations over HM3D scenes  
+  - 📄 [HM3D-Sem Dataset details](https://aihabitat.org/datasets/hm3d-semantics/)    
+  - Poster / project page: [CVPR Poster](https://cvpr.thecvf.com/virtual/2023/poster/22424)  
+
+- **ReplicaCAD** — rearrangeable indoor scenes for interaction / simulation  
+  - 📄 [ReplicaCAD Dataset (Habitat)](https://aihabitat.org/datasets/replica_cad/)  
+
+- **HSSD / Habitat Synthetic Scenes Dataset**  
+  - Repo / usage: [3dlg-hcvc/hssd](https://github.com/3dlg-hcvc/hssd)  
+
+- **AI2-THOR (Habitat-compatible version)**  
+  - Dataset page: [AI2THOR-Hab on Hugging Face](https://huggingface.co/datasets/hssd/ai2thor-hab)  
+- **Joint 2D-3D Semantic Data for Indoor Scenes**  
+  - Dataset / paper: [Armeni et al., Joint 2D-3D Semantic Data (arXiv)](https://arxiv.org/abs/1702.01105)  
+  > Provides aligned RGB, depth, semantic and 3D representations — useful as auxiliary data source.
 
 ---
 
 ## Contributing
 
-To contribute a new embodied discovery paper:
+If you know a paper that truly does **embodied navigation + category discovery**, please:
 
-1. Fork the repository  
-2. Add the paper to the appropriate year under **Papers by Year**  
-3. Use this template:
+1. Fork this repository  
+2. Add the paper under the correct year  
+3. Use this format:
 
     ```markdown
     - **[Paper Title]** — Authors (Venue, Year)  
       - 📄 [Paper](link) | 💻 [Code](link)  
-      > One-line summary: how it performs embodied category discovery  
+      > One-line note: how it performs discovery + navigation  
     ```
 
-4. Submit a Pull Request  
+4. Submit a Pull Request
 
 ---
 
