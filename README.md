@@ -280,8 +280,7 @@ If you know a paper that truly does **embodied navigation + category discovery**
 
     ```markdown
     - **[Paper Title]** — Authors (Venue, Year)  
-      - 📄 [Paper](link) | 💻 [Code](link)  
-      > One-line note: how it performs discovery + navigation  
+      - 📄 [Paper](link) | 💻 [Code](link)   
     ```
 
 4. Submit a Pull Request
